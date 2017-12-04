@@ -1,5 +1,3 @@
-#! /usr/bin/python3
-
 """Prints a nicely aligned table from a list of strings."""
 
 table_data = [['apples', 'oranges', 'cherries', 'banana'],

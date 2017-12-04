@@ -1,4 +1,5 @@
-#! /usr/bin/python3
+#! /usr/bin/env python3
+
 """A Regex version of the Strip Function."""
 
 import re
