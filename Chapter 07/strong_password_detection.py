@@ -2,8 +2,8 @@
 
 """Program to Detect Wheter a Password is Strong or Not."""
 
-import pyperclip
 import re
+import pyperclip
 
 # Strong Password Regexes
 
