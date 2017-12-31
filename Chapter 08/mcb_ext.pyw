@@ -11,8 +11,8 @@ py.exe mcb_ext.pyw delete_all - Deletes all keywords from clipboard
 """
 
 import shelve
-import pyperclip
 import sys
+import pyperclip
 
 mcb_shelf = shelve.open('mcb')
 
