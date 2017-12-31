@@ -38,10 +38,8 @@ to_elem.send_keys(RECIPIENT)
 subject_elem = browser.find_element_by_name('subjectbox')
 subject_elem.send_keys(SUBJECT)
 
-# Messge
-message_elem = browser.find_element_by_id(':cf')
-message_elem.send_keys(MESSAGE)
+# Message
+subject_elem.send_keys(Keys.TAB + MESSAGE + Keys.TAB + Keys.ENTER)
+time.sleep(5)
 
-# Click Send
-send_elem = browser.find_element_by_id(':b4')
-send_elem.click()
+browser.quit()
