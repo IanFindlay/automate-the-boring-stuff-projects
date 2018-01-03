@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 """Walk a folder tree and print the names of files above a chosen size."""
 

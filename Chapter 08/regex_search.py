@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 """Search for a regex pattern in all txt files in a directory."""
 

@@ -1,4 +1,4 @@
-#! usr/bin/env python3
+#!/usr/bin/env python3
 
 """Fix gaps in files with a chosen prefix in a specified folder."""
 

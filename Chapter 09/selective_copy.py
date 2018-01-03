@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 """Walk through a folder tree and copy all files of a particular extension."""
 

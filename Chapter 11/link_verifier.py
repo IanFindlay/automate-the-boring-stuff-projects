@@ -1,4 +1,4 @@
-#! /usr/bin/env Python
+#!/usr/bin/env python3
 
 """Download all linked pages from a given URL and note any 404's."""
 

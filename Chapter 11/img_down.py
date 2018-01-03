@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 """Download jpg/png images from Imgur that match a user's search term(s)."""
 

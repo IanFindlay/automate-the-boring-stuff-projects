@@ -1,4 +1,4 @@
-#! \usr\bin\env python3
+#!\usr\bin\env python3
 
 """Read txt file and let the user replace nouns, verbs, adverbs and adjectives.
 

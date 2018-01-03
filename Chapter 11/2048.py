@@ -1,4 +1,4 @@
-#!usr/bin/env/ python3
+#!/usr/bin/env/ python3
 
 """Automatically plays the game 2048."""
 
