@@ -14,7 +14,7 @@ NUMBER = int(sys.argv[1])
 cells = NUMBER + 1
 
 wb = openpyxl.Workbook()
-sheet = wb.get_sheet_by_name('Sheet')
+sheet = wb.active
 
 MAKE_BOLD = Font(bold=True)
 
