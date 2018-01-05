@@ -18,38 +18,38 @@ NAME = sys.argv[1]
 B_START = int(sys.argv[2])
 B_LENGTH = int(sys.argv[3])
 
-WB = openpyxl.load_workbook(NAME)
-SHEET = WB.active
+wb = openpyxl.load_workbook(NAME)
+sheet = wb.active
 
 # Read the data from spreadsheet and get list of row data lists
 print('Reading spreadsheet data...')
 rows = []
-MAX_ROW = SHEET.max_row
-MAX_COLUMN = SHEET.max_column
+MAX_ROW = sheet.max_row
+MAX_COLUMN = sheet.max_column
 for row in range(1, MAX_ROW + 1):
     data = []
     for cell in range(1, MAX_COLUMN + 1):
-        cell_value = SHEET.cell(row=row, column=cell).value
+        cell_value = sheet.cell(row=row, column=cell).value
         data.append(cell_value)
     rows.append(data)
 
 #print(sheet_data)
 
-WB = openpyxl.Workbook()
-SHEET = WB.active
+wb = openpyxl.Workbook()
+sheet = wb.active
 
 # Write rows prior to into new spreadsheet with blank lines inserted
 print('Inserting blanks...')
 for row in range(1, B_START):
     for cell in range(1, MAX_COLUMN + 1):
-        SHEET.cell(row=row, column=cell).value = rows[row - 1][cell - 1]
+        sheet.cell(row=row, column=cell).value = rows[row - 1][cell - 1]
 
 # Write remaining rows after the blank gap
 for row in range(B_START + B_LENGTH, MAX_ROW + B_LENGTH + 1):
     for cell in range(1, MAX_COLUMN + 1):
-        SHEET.cell(row=row, column=cell).value = rows[row - B_LENGTH - 1][cell - 1]
+        sheet.cell(row=row, column=cell).value = rows[row - B_LENGTH - 1][cell - 1]
 
-WB.save('blanked-' + NAME)
+wb.save('blanked-' + NAME)
 
 print("A copy of the spreadsheet with blanks inserted has been saved"
       " as 'blanked-spreadsheet_name]'. It can be found in the same"
