@@ -10,29 +10,29 @@ import openpyxl
 from openpyxl.utils import get_column_letter
 from openpyxl.styles import Font
 
-NUMBER = int(sys.argv[1])
-cells = NUMBER + 1
+number = int(sys.argv[1])
+cells = number + 1
 
 wb = openpyxl.Workbook()
 sheet = wb.active
 
-MAKE_BOLD = Font(bold=True)
+make_bold = Font(bold=True)
 
 while cells > 1:
     # Write outer cells values and make them bold
     sheet.cell(row=cells, column=1).value = cells - 1
     sheet.cell(row=1, column=cells).value = cells - 1
 
-    sheet.cell(row=cells, column=1).font = MAKE_BOLD
-    sheet.cell(row=1, column=cells).font = MAKE_BOLD
+    sheet.cell(row=cells, column=1).font = make_bold
+    sheet.cell(row=1, column=cells).font = make_bold
 
     cells -= 1
 
 # Populate the table innards with correct formula
-col_length = NUMBER + 1
+col_length = number + 1
 
 count = 0
-while count < NUMBER:
+while count < number:
     col_letter = get_column_letter(sheet.max_column - count)
 
     while col_length > 1:
@@ -41,7 +41,7 @@ while count < NUMBER:
 
         col_length -= 1
 
-    col_length = NUMBER + 1
+    col_length = number + 1
     count += 1
 
 wb.save('multi_table.xlsx')

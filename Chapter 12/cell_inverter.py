@@ -6,23 +6,23 @@ import re
 import openpyxl
 
 print('Enter the absolute path to the spreadsheet file:')
-FILE_PATH = input()
+file_path = input()
 
-PATH_REGEX = re.compile(r'(.*/)(.*)(\.xlsx)$')
-PATH_SPLIT = PATH_REGEX.search(FILE_PATH)
-PATH = PATH_SPLIT.group(1)
-NAME = PATH_SPLIT.group(2)
+path_regex = re.compile(r'(.*/)(.*)(\.xlsx)$')
+path_split = path_regex.search(file_path)
+path = path_split.group(1)
+name = path_split.group(2)
 
-wb = openpyxl.load_workbook(FILE_PATH)
+wb = openpyxl.load_workbook(file_path)
 sheet = wb.active
 
 # Make nested list of spreadsheet data (row by row)
 rows = []
-MAX_ROW = sheet.max_row
-MAX_COLUMN = sheet.max_column
-for row in range(1, MAX_ROW + 1):
+max_row = sheet.max_row
+max_column = sheet.max_column
+for row in range(1, max_row + 1):
     data = []
-    for cell in range(1, MAX_COLUMN + 1):
+    for cell in range(1, max_column + 1):
         cell_value = sheet.cell(row=row, column=cell).value
         data.append(cell_value)
     rows.append(data)
@@ -39,5 +39,5 @@ for row in rows:
         row_num += 1
     column_num += 1
 
-wb.save(PATH + NAME + '(inverted).xlsx')
-print('Spreadsheet data inverted and saved to ' + NAME + '(inverted).xlsx.')
+wb.save(path + name + '(inverted).xlsx')
+print('Spreadsheet data inverted and saved to ' + name + '(inverted).xlsx.')

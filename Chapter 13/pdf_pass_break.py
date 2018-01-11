@@ -5,20 +5,20 @@
 import PyPDF2
 
 print('Enter the absolute directory of the PDF you wish to break:')
-FILE = input()
+file = input()
 
-with open('/home/finners/Downloads/dictionary.txt') as f:
-    WORDS = f.readlines()
+with open('dictionary.txt') as f:
+    words = f.readlines()
 
-    PDF_READER = PyPDF2.PdfFileReader(open(FILE, 'rb'))
+    pdf_reader = PyPDF2.PdfFileReader(open(file, 'rb'))
 
-    for word in WORDS:
+    for word in words:
         word = word.strip()
         lower = word.lower()
         upper = word.upper()
-        if PDF_READER.decrypt(lower) == 1:
+        if pdf_reader.decrypt(lower) == 1:
             print('Password = ' + lower)
             break
-        elif PDF_READER.decrypt(upper) == 1:
+        elif pdf_reader.decrypt(upper) == 1:
             print('Password = ' + upper)
             break

@@ -5,15 +5,15 @@
 import requests
 import bs4
 
-URL = input('Enter the URL that you would like to verify the links for: ')
-RES = requests.get(URL)
-RES.raise_for_status()
+url = input('Enter the URL that you would like to verify the links for: ')
+res = requests.get(url)
+res.raise_for_status()
 
-SOUP = bs4.BeautifulSoup(RES.text, 'html.parser')
-LINKS = SOUP.select('a')
+soup = bs4.BeautifulSoup(res.text, 'html.parser')
+links = soup.select('a')
 fof = []   # List of links that lead to a 404 page
 
-for link in LINKS:
+for link in links:
     try:
         unmade_url = link['href']
         if unmade_url.startswith('http'):
@@ -23,7 +23,7 @@ for link in LINKS:
             to_check = 'https:' + unmade_url
 
         elif unmade_url.startswith('#'):
-            to_check = URL + unmade_url
+            to_check = url + unmade_url
 
         result = requests.get(to_check)
 

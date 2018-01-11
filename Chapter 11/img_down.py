@@ -8,7 +8,7 @@ import bs4
 
 def image_downloader(extension):
     """Search for and download all images of the argument type from Imgur."""
-    url = 'http://imgur.com/search?q=' + SEARCH + ' ext:' + extension
+    url = 'http://imgur.com/search?q=' + search + ' ext:' + extension
     os.makedirs('/home/finners/Downloads/imgur', exist_ok=True)
 
     res = requests.get(url)
@@ -34,11 +34,11 @@ def image_downloader(extension):
     return len(image_elem)
 
 
-SEARCH = input('Enter desired search term(s): ')
-DOWNLOADED = image_downloader('jpg') + image_downloader('png')
+search = input('Enter desired search term(s): ')
+downloaded = image_downloader('jpg') + image_downloader('png')
 
-if DOWNLOADED == 0:
+if downloaded == 0:
     print('No images found.')
 
 else:
-    print('All ' + str(DOWNLOADED) + ' files successfully downloaded.')
+    print('All ' + str(downloaded) + ' files successfully downloaded.')

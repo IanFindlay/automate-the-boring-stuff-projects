@@ -10,17 +10,17 @@ import os
 import sys
 import PyPDF2
 
-PASS = sys.argv[1]
+password = sys.argv[1]
 decrypt_failed = []
 
 for folders, subfolders, filenames in os.walk('.'):
 
     for filename in filenames:
         if filename.endswith('.pdf'):
-            PATH = os.path.join(folders, filename)
-            pdf_reader = PyPDF2.PdfFileReader(open(PATH, 'rb'))
+            path = os.path.join(folders, filename)
+            pdf_reader = PyPDF2.PdfFileReader(open(path, 'rb'))
             if pdf_reader.isEncrypted is True:
-                if pdf_reader.decrypt(PASS) != 1:
+                if pdf_reader.decrypt(password) != 1:
                     print(filename + ' failed to decrypt.')
                     decrypt_failed.append(filename)
                 else:
@@ -29,7 +29,7 @@ for folders, subfolders, filenames in os.walk('.'):
                         pdf_writer.addPage(pdf_reader.getPage(page_num))
 
                     # Encrypt copy of PDF and save with _encrypted suffix
-                    decrypted_path = PATH[:-4] + '_decrpyted.pdf'
+                    decrypted_path = path[:-4] + '_decrpyted.pdf'
                     decrypted_version = open(decrypted_path, 'wb')
                     pdf_writer.write(decrypted_version)
                     decrypted_version.close()

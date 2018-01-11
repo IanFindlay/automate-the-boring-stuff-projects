@@ -7,9 +7,9 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-RECIPIENT = sys.argv[1]
-SUBJECT = sys.argv[2]
-MESSAGE = sys.argv[3]
+recipient = sys.argv[1]
+subject = sys.argv[2]
+message = sys.argv[3]
 
 # Username Login
 browser = webdriver.Firefox()
@@ -32,14 +32,14 @@ time.sleep(5)
 
 # Recipient
 to_elem = browser.find_element_by_name('to')
-to_elem.send_keys(RECIPIENT)
+to_elem.send_keys(recipient)
 
 # Subject
 subject_elem = browser.find_element_by_name('subjectbox')
-subject_elem.send_keys(SUBJECT)
+subject_elem.send_keys(subject)
 
 # Message
-subject_elem.send_keys(Keys.TAB + MESSAGE + Keys.TAB + Keys.ENTER)
+subject_elem.send_keys(Keys.TAB + message + Keys.TAB + Keys.ENTER)
 time.sleep(5)
 
 browser.quit()
