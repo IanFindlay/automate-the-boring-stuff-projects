@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """A stopwatch program with a prettier output and pyperclip functionality."""
 

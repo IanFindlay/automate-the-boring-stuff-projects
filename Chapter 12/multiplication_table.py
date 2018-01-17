@@ -1,4 +1,4 @@
-#!/usr/bin/env/ python3
+#!/usr/bin/env python3
 
 """Creates a N x N multiplication table in a spreadsheet.
 
