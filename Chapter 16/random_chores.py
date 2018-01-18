@@ -20,10 +20,10 @@ def get_chore(email, last_chore):
         print('Reshuffling as a chore would have to have been repeated.')
 
 
-def send_chore(email, chore):
+def send_chore(email, chosen_chore):
     """Emails the address with chore details."""
     smtp_obj.sendmail('Example@Email.com', email, 'Subject: This Weeks Chore.'
-                      '/n You have been randomly assigned ' + chore
+                      '/n You have been randomly assigned ' + chosen_chore
                       + '. You will not receive this chore next time.')
 
 
@@ -53,9 +53,9 @@ for address, chore in chore_assignments.items():
 smtp_obj.quit()
 
 with open('last_chores.txt', 'w') as f:
-    f.write(chore_assignments[EMAILS[0]])
-    f.write(chore_assignments[EMAILS[1]])
-    f.write(chore_assignments[EMAILS[2]])
-    f.write(chore_assignments[EMAILS[3]])
+    f.write(chore_assignments[EMAILS[0]] + '\n')
+    f.write(chore_assignments[EMAILS[1]] + '\n')
+    f.write(chore_assignments[EMAILS[2]] + '\n')
+    f.write(chore_assignments[EMAILS[3]] + '\n')
 
 print('Everyone has been emailed their latest chore - Program will now close.')
