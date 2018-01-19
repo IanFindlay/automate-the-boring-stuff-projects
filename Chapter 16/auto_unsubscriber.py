@@ -28,6 +28,8 @@ def unsub_scan(user_name, user_pass):
             if 'unsubscribe' in str(selected):
                 unsub_links.append(selected.get('href'))
 
+    imap_obj.logout()
+
     return unsub_links
 
 email = input('Enter your email username: ')
