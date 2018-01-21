@@ -55,5 +55,3 @@ for number in range(1, len(found) + 1):
         shutil.move(next_file, current_file)
 
 print('File numbering has been fixed.')
-
-# TODO Find all numbered prefixes in a folder and automatically fix them
