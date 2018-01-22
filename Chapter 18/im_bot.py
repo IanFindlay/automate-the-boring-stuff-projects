@@ -48,7 +48,6 @@ def auto_message(name, message):
             attempts -= 1
 
 
-
 print('Enter the contacts you wish to send a message to (e.g. Bob, Bill):')
 send_to = input().split(',')
 
