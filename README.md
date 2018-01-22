@@ -1,5 +1,8 @@
 # Automate the Boring Stuff with Python - Practice Projects
-### My solutions to all of the practice projects in [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) written by [Al Sweigart](http://alsweigart.com/).
+### My solutions to the projects in [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) by [Al Sweigart](http://alsweigart.com/).  
+  
+---  
+
 
   *  **Chapter 3 - Functions:**  
 
