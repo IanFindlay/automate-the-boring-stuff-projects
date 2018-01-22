@@ -22,7 +22,7 @@
   * **Chapter 7 - Pattern Matching with Regular Expressions:**  
 
     * [Strong Password Detection](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2007/strong_password_detection.py)
-    * [Regex Version of Strip()](hhttps://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2007/regex_strip.py)  
+    * [Regex Version of Strip()](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2007/regex_strip.py)  
 
   * **Chapter 8 - Reading and Writing Files:**  
 
