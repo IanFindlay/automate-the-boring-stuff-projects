@@ -7,7 +7,7 @@ import pyperclip
 
 # Strong Password Regexes
 
-pass_length_regex = re.compile(r'(.*)+')       # >= 8 characters
+pass_length_regex = re.compile(r'.{8,}')       # >= 8 characters
 
 pass_upper_regex = re.compile(r'[A-Z]')        # Contains an upper case letter
 
