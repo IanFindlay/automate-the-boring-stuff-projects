@@ -6,85 +6,85 @@
 
   *  **Chapter 3 - Functions:**  
 
-      * [The Collatz Sequence / Input Validation]( https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2003/Collatz.py)
+      * [The Collatz Sequence / Input Validation]( https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2003/Collatz.py)
   * **Chapter 4 - Lists:**  
 
-    * [Comma Code /Character Picture Grid](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2004/comma_and_grid.py)  
+    * [Comma Code /Character Picture Grid](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2004/comma_and_grid.py)  
 
   * **Chapter 5 - Dictionaries and Structuring Data:**  
 
-    * [Fantasy Game Inventory / List to Dictionary Function for Game Inventory](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2005/Game_Inventory.py)  
+    * [Fantasy Game Inventory / List to Dictionary Function for Game Inventory](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2005/Game_Inventory.py)  
 
   * **Chapter 6 - Manipulating Strings:**  
 
-    * [Table Printer](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2006/table_printer.py)
+    * [Table Printer](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2006/table_printer.py)
 
   * **Chapter 7 - Pattern Matching with Regular Expressions:**  
 
-    * [Strong Password Detection](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2007/strong_password_detection.py)
-    * [Regex Version of Strip()](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2007/regex_strip.py)  
+    * [Strong Password Detection](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2007/strong_password_detection.py)
+    * [Regex Version of Strip()](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2007/regex_strip.py)  
 
   * **Chapter 8 - Reading and Writing Files:**  
 
-    * [Extending the Multiclipboard](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2008/mcb_ext.pyw)
-    * [Mad Libs](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2008/mad_libs.py)
-    * [Regex Search](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2008/regex_search.py)  
+    * [Extending the Multiclipboard](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2008/mcb_ext.pyw)
+    * [Mad Libs](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2008/mad_libs.py)
+    * [Regex Search](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2008/regex_search.py)  
 
   * **Chapter 9 - Organizing Files:**  
 
-    * [Selective Copy](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2009/selective_copy.py)  
-    * [Deleting Unneeded Files](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2009/deleting_unneeded.py)  
-    * [Filling in the Gaps](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2009/filling_gaps.py)  
+    * [Selective Copy](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2009/selective_copy.py)  
+    * [Deleting Unneeded Files](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2009/deleting_unneeded.py)  
+    * [Filling in the Gaps](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2009/filling_gaps.py)  
 
   * **Chapter 10 - Debugging:**  
 
-    * [Debugging Coin Toss](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2010/debug_toss.py)
+    * [Debugging Coin Toss](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2010/debug_toss.py)
 
   * **Chapter 11 - Web Scraping:**  
 
-    * [Command Line Emailer](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2011/clemailer.py)
-    * [Image Site Downloader](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2011/img_down.py)
-    * [2048](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2011/2048.py)
-    * [Link Verification](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2011/link_verifier.py)
+    * [Command Line Emailer](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2011/clemailer.py)
+    * [Image Site Downloader](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2011/img_down.py)
+    * [2048](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2011/2048.py)
+    * [Link Verification](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2011/link_verifier.py)
 
   * **Chapter 12 - Working with Excel Spreadsheets:**  
 
-    * [Multiplication Table Maker](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2012/multiplication_table.py)
-    * [Blank Row Inserter](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2012/blank_row_inserter.py)
-    * [Spreadsheet Cell Inverter](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2012/cell_inverter.py)
-    * [Text Files to Spreadsheet](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2012/text2sheet.py)
-    * [Spreadsheet to Text Files](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2012/sheet2text.py)
+    * [Multiplication Table Maker](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2012/multiplication_table.py)
+    * [Blank Row Inserter](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2012/blank_row_inserter.py)
+    * [Spreadsheet Cell Inverter](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2012/cell_inverter.py)
+    * [Text Files to Spreadsheet](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2012/text2sheet.py)
+    * [Spreadsheet to Text Files](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2012/sheet2text.py)
   
   * **Chapter 13 - Working with PDF and Word Documents:**  
 
-    * [PDF Paranoia - Encryption](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2013/pdf_encrypt.py)
-    * [PDF Paranoia - Decryption](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2013/pdf_decrypt.py)
-    * [Custom Invitations as Word Documents](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2013/invite_maker.py)
-    * [Brute-Force PDF Password Breaker](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2013/pdf_pass_break.py)
+    * [PDF Paranoia - Encryption](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2013/pdf_encrypt.py)
+    * [PDF Paranoia - Decryption](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2013/pdf_decrypt.py)
+    * [Custom Invitations as Word Documents](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2013/invite_maker.py)
+    * [Brute-Force PDF Password Breaker](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2013/pdf_pass_break.py)
 
   * **Chapter 14 - Working with CSV Files and JSON Data:**  
 
-    * [Excel-to-CSV Converter](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2014/excel2csv.py)
+    * [Excel-to-CSV Converter](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2014/excel2csv.py)
 
   * **Chapter 15 - Keeping Time, Scheduling Tasks, and Launching Programs:**  
 
-    * [Prettified Stopwatch](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2015/pretty_stopwatch.py)
-    * [Scheduled Web Comic Downloader](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2015/comic_downloader.py)
+    * [Prettified Stopwatch](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2015/pretty_stopwatch.py)
+    * [Scheduled Web Comic Downloader](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2015/comic_downloader.py)
 
   * **Chapter 16 - Sending Email and Text Messages:**  
 
-    * [Random Chore Assignment Emailer](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/hapter%2016/random_chores.py)
-    * [Umbrella Reminder](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2016/umbrella-reminder.py)
-    * [Auto Unsubscriber](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2016/auto_unsubscriber.py)
-    * [Controlling Your Computer Through Email](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2016/torrent_launcher.py)
+    * [Random Chore Assignment Emailer](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/hapter%2016/random_chores.py)
+    * [Umbrella Reminder](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2016/umbrella-reminder.py)
+    * [Auto Unsubscriber](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2016/auto_unsubscriber.py)
+    * [Controlling Your Computer Through Email](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2016/torrent_launcher.py)
 
   * **Chapter 17 - Manipulating Images:**  
 
-    * [Extending and Fixing the Chapter Project Programs](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2017/resize-extended.py)
-    * [Identifying Photo Folders on the Hard Drive](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2017/photo_folder_finder.py)
-    * [Custom Seating Cards](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2017/custom-cards.py)
+    * [Extending and Fixing the Chapter Project Programs](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2017/resize-extended.py)
+    * [Identifying Photo Folders on the Hard Drive](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2017/photo_folder_finder.py)
+    * [Custom Seating Cards](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2017/custom-cards.py)
 
   * **Chapter 18 - Controlling the Keyboard and Mouse with GUI Automation:**  
 
-    * [Looking Busy](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2018/looking_busy.py)
-    * [Instant Messenger Bot](https://github.com/IFinners/automate-the-boring-stuff-projects/blob/master/Chapter%2018/im_bot.py)
+    * [Looking Busy](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2018/looking_busy.py)
+    * [Instant Messenger Bot](https://github.com/IanFindlay/automate-the-boring-stuff-projects/blob/master/Chapter%2018/im_bot.py)
