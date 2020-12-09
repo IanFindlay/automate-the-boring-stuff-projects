@@ -9,7 +9,7 @@ def strip(text, remove=''):
     """Perform string.strip-like functions but using regexes."""
     # Removes whitespace from either end of the string
     if remove == '':
-        space_regex = re.compile(r'^(\s*)(.*)(\s)*$')
+        space_regex = re.compile(r'^(\s*)(\S*)(\s)*$')
         trimmed = space_regex.search(text)
         return trimmed.group(2)
 
