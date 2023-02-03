@@ -1,0 +1,46 @@
+Mixing Boolean and Comparison Operators
+
+Since the comparison operators evaluate to Boolean values, you can use them in expressions with the Boolean operators.
+
+Recall that the and, or, and not operators are called Boolean operators because they always operate on the Boolean values True and False. While expressions like 4 < 5 aren’t Boolean values, they are expressions that evaluate down to Boolean values. Try entering some Boolean expressions that use comparison operators into the interactive shell.
+
+>>> (4 < 5) and (5 < 6)
+True
+>>> (4 < 5) and (9 < 6)
+False
+>>> (1 == 2) or (2 == 2)
+True
+
+The computer will evaluate the left expression first, and then it will evaluate the right expression. When it knows the Boolean value for each, it will then evaluate the whole expression down to one Boolean value. You can think of the computer’s evaluation process for (4 < 5) and (5 < 6) as the following:
+image
+
+You can also use multiple Boolean operators in an expression, along with the comparison operators:
+
+>>> 2 + 2 == 4 and not 2 + 2 == 5 and 2 * 2 == 2 + 2
+True
+
+if
+
+elif
+
+When there is a chain of elif statements, only one or none of the clauses will be executed. Once one of the statements’ conditions is found to be True, the rest of the elif clauses are automatically skipped. For example, open a new file editor window and enter the following code, saving it as vampire.py:
+
+name = 'Carol'
+age = 3000
+if name == 'Alice':
+    print('Hi, Alice.')
+elif age < 12:
+    print('You are not Alice, kiddo.')
+elif age > 2000:
+    print('Unlike you, Alice is not an undead, immortal vampire.')
+elif age > 100:
+    print('You are not Alice, grannie.')
+
+replit.com/@CAG07
+
+your_name.py
+your_name2.py
+
+continue Statements
+
+Like break statements, continue statements are used inside loops. When the program execution reaches a continue statement, the program execution immediately jumps back to the start of the loop and reevaluates the loop’s condition. (This is also what happens when the execution reaches the end of the loop.)
