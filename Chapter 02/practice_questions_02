@@ -1,25 +1,59 @@
 Practice Questions
 
 1. What are the two values of the Boolean data type? How do you write them?
+True and False
+
+>>> data = True
+>>> data
+True
 
 2. What are the three Boolean operators?
+and
+or
+not
 
 3. Write out the truth tables of each Boolean operator (that is, every possible combination of Boolean values for the operator and what they evaluate to).
 
+<h3>and operator truth table</h3>
+TT  T
+TF  F
+FT  F
+FF  F
+
+<h3>or operator truth table</h3>
+TT  T
+TF  T
+FT  T
+FF  F
+
+<h3>not operator truth table</h3>
+not True  False
+not False True
+
+
 4. What do the following expressions evaluate to?
 
-(5 > 4) and (3 == 5)
-not (5 > 4)
-(5 > 4) or (3 == 5)
-not ((5 > 4) or (3 == 5))
-(True and True) and (True == False)
-(not False) or (not True)
+(5 > 4) and (3 == 5)  False
+not (5 > 4)  False
+(5 > 4) or (3 == 5)  True
+not ((5 > 4) or (3 == 5))  False
+(True and True) and (True == False)  False
+(not False) or (not True)  True
 
 5. What are the six comparison operators?
+==
+!=
+<
+>
+<=
+>=
 
 6. What is the difference between the equal to operator and the assignment operator?
+The == operator asks whether two values are the same
+The = operator (assignment) puts the value on the right into the variable on the left
 
 7. Explain what a condition is and where you would use one.
+
 
 8. Identify the three blocks in this code:
 
