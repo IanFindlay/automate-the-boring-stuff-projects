@@ -53,30 +53,70 @@ The == operator asks whether two values are the same
 The = operator (assignment) puts the value on the right into the variable on the left
 
 7. Explain what a condition is and where you would use one.
-
+ Conditions always evaluate down to a Boolean value, True or False. A flow control statement decides what to do based on whether its condition is True or False, and almost every flow control statement uses a condition.
 
 8. Identify the three blocks in this code:
 
 spam = 0
 if spam == 10:
-    print('eggs')
+    print('eggs') #block_1
     if spam > 5:
-        print('bacon')
+        print('bacon') #block_2
     else:
-        print('ham')
+        print('ham') #block_3
     print('spam')
 print('spam')
 
 9. Write code that prints Hello if 1 is stored in spam, prints Howdy if 2 is stored in spam, and prints Greetings! if anything else is stored in spam.
+#https://replit.com/@CAG07/spamhello#main.py
+
+spam = 3
+if spam == 1:
+  print('Hello')
+elif spam == 2:
+  print('Howdy')
+else:
+  print('Greetings!')
 
 10. What keys can you press if your program is stuck in an infinite loop?
+Ctrl + C
 
 11. What is the difference between break and continue?
+A break statement exists a loop
+The continue statement jumps to the start of the loop and reevaluates the loop condition
 
 12. What is the difference between range(10), range(0, 10), and range(0, 10, 1) in a for loop?
+The result will be the same for all 3
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
 
 13. Write a short program that prints the numbers 1 to 10 using a for loop. Then write an equivalent program that prints the numbers 1 to 10 using a while loop.
 
+for i in range(1, 11):
+  print(i)
+
+
+#Then write an equivalent program that prints the numbers 1 to 10 using a while loop
+
+i = 1
+while i <= 10:
+  print(i)
+  i = i + 1
+
+
 14. If you had a function named bacon() inside a module named spam, how would you call it after importing spam?
+spam.bacon()
 
 Extra credit: Look up the round() and abs() functions on the internet, and find out what they do. Experiment with them in the interactive shell.
+https://docs.python.org/3/library/functions.html?highlight=round#round
+
+https://docs.python.org/3/library/functions.html?highlight=round#abs
