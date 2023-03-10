@@ -9,9 +9,11 @@ Called
 def
 
 4. What is the difference between a function and a function call?
-
+Functions are modules of code that accomplish a specific task
+A function call passes an argument in a function
 
 5. How many global scopes are there in a Python program? How many local scopes?
+
 
 6. What happens to variables in a local scope when the function call returns?
 
