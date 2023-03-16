@@ -13,13 +13,20 @@ Functions are modules of code that accomplish a specific task
 A function call passes an argument in a function
 
 5. How many global scopes are there in a Python program? How many local scopes?
-
+There is only one global scope, and it is created when your program begins
+A local scope is created whenever a function is called. Any variables assigned in the function exist within the function’s local scope
 
 6. What happens to variables in a local scope when the function call returns?
+When the function returns, the local scope is destroyed, and these variables are forgotten.
+The next time you call the function, the local variables will not remember the values stored in them from the last time the function was called.
+Local variables are also stored in frame objects on the call stack.
 
 7. What is a return value? Can a return value be part of an expression?
+Return value is the value that a function call evaluates to. When an expression is used with a return statement, the return value is what this expression evaluates to.
 
 8. If a function does not have a return statement, what is the return value of a call to that function?
+ If you don't explicitly use a return value in a return statement, or if you totally omit the return statement, then Python will implicitly return a default value for you.
+ That default return value will always be None.
 
 9. How can you force a variable in a function to refer to the global variable?
 
