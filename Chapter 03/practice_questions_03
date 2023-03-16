@@ -29,13 +29,26 @@ Return value is the value that a function call evaluates to. When an expression 
  That default return value will always be None.
 
 9. How can you force a variable in a function to refer to the global variable?
+If you need to modify a global variable from within a function, use the global statement.
+If you have a line such as global eggs at the top of a function, it tells Python, “In this function, eggs refers to the global variable, so don’t create a local variable with this name.”
 
 10. What is the data type of None?
+NoneType
 
 11. What does the import areallyourpetsnamederic statement do?
+ModuleNotFoundError: No module named 'areallyourpetsnamederic'
 
 12. If you had a function named bacon() in a module named spam, how would you call it after importing spam?
+#spam.py module file
+def bacon():
+    print('bacon!')
+
+from spam import bacon
+spam.bacon()
 
 13. How can you prevent a program from crashing when it gets an error?
+Errors can be handled with try and except statements. When code in a try clause causes an error, the program execution immediately moves to the code in the except clause.
+After running that code, the execution continues as normal.
 
 14. What goes in the try clause? What goes in the except clause?
+The code that could potentially have an error is put in a try clause. The program execution moves to the start of a following except clause if an error happens.
