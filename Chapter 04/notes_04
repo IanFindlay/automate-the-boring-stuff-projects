@@ -20,7 +20,7 @@ Removing Values from Lists with del Statements
 In practice, you almost never need to delete simple variables. The del statement is mostly used to delete values from lists.
 
 The in and not in Operators
-```{python}
+
 >>> 'howdy' in ['hello', 'hi', 'howdy', 'heyas']
 True
 >>> spam = ['hello', 'hi', 'howdy', 'heyas']
@@ -30,28 +30,28 @@ False
 False
 >>> 'cat' not in spam
 True
-```
+
 
 The enumerate() function is useful if you need both the item and the item’s index in the loop’s block.
 
 Augmented Assignment Operators
-```{Python}
+
 >>> spam = 42
 >>> spam += 1
 >>> spam
 43
-```
+
 
 Methods
 A method is the same thing as a function, except it is “called on” a value. For example, if a list value were stored in spam, you would call the index() list method (which I’ll explain shortly) on that list like so: spam.index('hello'). The method part comes after the value, separated by a period.
 
-```{Python}
+
 >>> spam = ['hello', 'hi', 'howdy', 'heyas']
 >>> spam.index('hello')
 0
 >>> spam.index('heyas')
 3
-```
+
 
 Removing Values from Lists with the remove() Method
 The del statement is good to use when you know the index of the value you want to remove from the list. The remove() method is useful when you know the value you want to remove from the list.
@@ -87,4 +87,49 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> newName
 'Zophie the cat'
 >>>
+
+Tuples are similar to lists, except they are immutable and use parentheses instead of square brackets. Tuples are useful when you want to store a set of values that should not be changed throughout the life of a program. For example, the (x, y) coordinates of a rectangle or the RGB values of a color are examples of tuples.
+
+The tuple data type is an immutable data type. This means that the tuple itself cannot be changed. However, the values inside a tuple can be changed.
+
+>>> eggs = ('hello', 42, 0.5)
+>>> eggs[1] = 99
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    eggs[1] = 99
+TypeError: 'tuple' object does not support item assignment
+
+>>> spam = list(eggs)
+>>> spam[1] = 99
+>>> eggs = tuple(spam)
+>>> eggs
+('hello', 99, 0.5)
+
+If you need an ordered sequence of values that never changes, use a tuple
+
+References
+Although Python variables technically contain references to values, people often casually say that the variable contains the value.
+
+>>> id('Howdy')
+2840329035888
+
+When Python runs id('Howdy'), it creates the 'Howdy' string in the computer’s memory. The numeric memory address where the string is stored is returned by the id() function. Python picks this address based on which memory bytes happen to be free on your computer at the time, so it’ll be different each time you run this code.
+
+Python has an automatic garbage collector to delete any values not referenced by a variable to free up memory space. The garbage collector runs periodically, but you can also run it manually by calling the gc.collect() function.
+
+>>> import copy
+>>> spam = ['A', 'B', 'C', 'D']
+>>> id(spam)
+2840329189504
+>>> cheese = copy.copy(spam)
+>>> id(cheese)
+2840329037888
+>>> cheese[1] = 42
+>>> spam
+['A', 'B', 'C', 'D']
+>>> cheese
+['A', 42, 'C', 'D']
+>>>
+
+The copy.copy() function will do a shallow copy of a list, while the copy.deepcopy() function will do a deep copy of a list. A shallow copy will duplicate the list itself, but the references inside the list will still point to the original list values. A deep copy will duplicate the list itself and also the references inside the list, so that the duplicate list is completely independent of the original list.
 
