@@ -1,0 +1,16 @@
+1. What is []?
+Opening and closing square brackets are used for the beginning and end of a list. A list value is inside the brackets.
+
+2. How would you assign the value 'hello' as the third value in a list stored in a variable named spam? (Assume spam contains [2, 4, 6, 8, 10].)
+spam[3]
+
+For the following three questions, let’s say spam contains the list ['a', 'b', 'c', 'd'].
+3. What does spam[int(int('3' * 2) // 11)] evaluate to?
+d
+
+4. What does spam[-1] evaluate to?
+d
+
+5. What does spam[:2] evaluate to?
+['a', 'b']
+
