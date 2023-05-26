@@ -1,0 +1,19 @@
+Unlike indexes for lists, indexes for dictionaries can use many different data types, not just integers.
+
+>>> spam = ['cats', 'dogs', 'moose']
+>>> bacon = ['dogs', 'moose', 'cats']
+>>> spam == bacon
+False
+>>> eggs = {'name': 'Zophie', 'species': 'cat', 'age': '8'}
+>>> ham = {'species': 'cat', 'age': '8', 'name': 'Zophie'}
+>>> eggs == ham
+True
+
+ORDERED DICTIONARIES IN PYTHON 3.7
+While they’re still not ordered and have no “first” key-value pair, dictionaries in Python 3.7 and later will remember the insertion order of their key-value pairs if you create a sequence value from them.
+
+The keys(), values(), and items() Methods
+There are three dictionary methods that will return list-like values of the dictionary’s keys, values, or both keys and values: keys(), values(), and items().
+The values returned by these methods are not true lists: they cannot be modified and do not have an append() method.
+But these data types (dict_keys, dict_values, and dict_items, respectively) can be used in for loops
+
