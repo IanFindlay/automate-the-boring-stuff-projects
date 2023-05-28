@@ -17,3 +17,50 @@ There are three dictionary methods that will return list-like values of the dict
 The values returned by these methods are not true lists: they cannot be modified and do not have an append() method.
 But these data types (dict_keys, dict_values, and dict_items, respectively) can be used in for loops
 
+The get() Method
+It’s tedious to check whether a key exists in a dictionary before accessing that key’s value. Fortunately, dictionaries have a get() method that takes two arguments: the key of the value to retrieve and a fallback value to return if that key does not exist.
+
+Enter the following into the interactive shell:
+
+>>> picnicItems = {'apples': 5, 'cups': 2}
+>>> 'I am bringing ' + str(picnicItems.get('cups', 0)) + ' cups.'
+'I am bringing 2 cups.'
+>>> 'I am bringing ' + str(picnicItems.get('eggs', 0)) + ' eggs.'
+'I am bringing 0 eggs.'
+
+The setdefault() Method
+You’ll often have to set a value in a dictionary for a certain key only if that key does not already have a value.
+
+>>> spam = {'name': 'Pooka', 'age': 5}
+>>> spam.setdefault('color', 'black')
+'black'
+>>> spam
+{'color': 'black', 'age': 5, 'name': 'Pooka'}
+>>> spam.setdefault('color', 'white')
+'black'
+>>> spam
+{'color': 'black', 'age': 5, 'name': 'Pooka'}
+
+The first time setdefault() is called, the dictionary in spam changes to {'color': 'black', 'age': 5, 'name': 'Pooka'}. The method returns the value 'black' because this is now the value set for the key 'color'. When spam.setdefault('color', 'white') is called next, the value for that key is not changed to 'white', because spam already has a key named 'color'.
+
+The setdefault() method is a nice shortcut to ensure that a key exists.
+
+pprint
+The pprint.pprint() function is especially helpful when the dictionary itself contains nested lists or dictionaries.
+https://docs.python.org/3/library/pprint.html
+
+If you want to obtain the prettified text as a string value instead of displaying it on the screen, call pprint.pformat() instead. These two lines are equivalent to each other:
+
+pprint.pprint(someDictionaryValue)
+print(pprint.pformat(someDictionaryValue))
+
+Using pprint.pformat() will give you a string that you can write to .py file. This file will be your very own module that you can import whenever you want to use the prettified version of the dictionary.
+
+Nested Dictionaries and Lists
+Modeling a tic-tac-toe board was fairly simple: the board needed only a single dictionary value with nine key-value pairs.
+As you model more complicated things, you may find you need dictionaries and lists that contain other dictionaries and lists.
+Lists are useful to contain an ordered series of values, and dictionaries are useful for associating keys with values.
+
+Complete Tic-Tac-Toe Board
+Reference https://inventwithpython.com/invent4thed/chapter10.html
+
