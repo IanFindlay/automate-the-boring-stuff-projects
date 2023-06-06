@@ -12,3 +12,14 @@ def display_inventory(inventory):
         item_total += v
     print('Total number of items : ' + str(item_total))
 
+
+def add_to_inventory(inventory, added_items):
+    for loot in added_items:
+        inventory.setdefault(loot, 0)
+        inventory[loot] += 1
+    return(inventory)
+
+inventory = {'gold coin': 42, 'rope': 1}
+dragon_loot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+inventory = add_to_inventory(inventory, dragon_loot)
+display_inventory(inventory)
