@@ -1,0 +1,33 @@
+Raw Strings
+You can place an r before the beginning quotation mark of a string to make it a raw string. A raw string completely ignores all escape characters and prints any backslash that appears in the string.
+
+print(r'That is Carol\'s cat.')
+That is Carol\'s cat.
+
+The r prefix will escape all the backslashes in a string. This is useful for strings that contain backslashes that you don’t want to be escaped, such as the strings used for regular expressions described in the next chapter.
+
+Multiline Strings with Triple Quotes
+"""This is a test program.
+Written by Al Sweigart al@inventwithpython.com
+
+This program was designed for Python 3, not Python 2.
+"""
+
+The in and not in Operators with Strings
+The in and not in operators can be used with strings just like with list values. An expression with two strings joined using in or not in will evaluate to a Boolean True or False. Enter the following into the interactive shell:
+>>> 'Hello' in 'Hello World'
+True
+>>> 'Hello' in 'Hello'
+True
+>>> 'HELLO' in 'Hello World'
+False
+
+F-strings
+You can use f-strings to make this print() call much cleaner:
+>>> name = 'Al'
+>>> age = 4000
+>>> f'My name is {name}. Next year I will be {age + 1}.'
+'My name is Al. Next year I will be 4001.'
+
+The f-string expression evaluates to a string, which is then passed to the print() function. Notice that the f-string expression is inside the quotes that begin and end the string. You can use single, double, or triple quotes for an f-string.
+
