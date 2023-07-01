@@ -1,22 +1,42 @@
 #Daily Affirmation Generator
 
-import random
 import time
 
-positive = ["You are a great person!", "You are a wonderful person!", "You are a beautiful person!", "You are a smart person!", "You are a kind person!", "You are a loving person!", "You are a caring person!", "You are a strong person!", "You are a brave person!", "You are a confident person!", "You are a powerful person!", "You are a successful person!", "You are a talented person!", "You are a unique person!", "You are a special person!", "You are a good person!", "You are a great person!", "You are a wonderful person!", "You are a beautiful person!", "You are a smart person!", "You are a kind person!", "You are a loving person!", "You are a caring person!", "You are a strong person!", "You are a brave person!", "You are a confident person!", "You are a powerful person!", "You are a successful person!", "You are a talented person!", "You are a unique person!", "You are a special person!"]
-negative = ["You are a bad person!", "You are a terrible person!", "You are an ugly person!", "You are a dumb person!", "You are a mean person!", "You are a hateful person!", "You are a selfish person!", "You are a weak person!", "You are a cowardly person!", "You are an insecure person!", "You are a powerless person!", "You are a failure!", "You are a talentless person!", "You are a boring person!", "You are a normal person!", "You are a regular person!", "You are a bad person!", "You are a terrible person!", "You are an ugly person!", "You are a dumb person!", "You are a mean person!", "You are a hateful person!", "You are a selfish person!", "You are a weak person!", "You are a cowardly person!", "You are an insecure person!", "You are a powerless person!", "You are a failure!", "You are a talentless person!", "You are a boring person!", "You are a normal person!", "You are a regular person!"]
-neutral = ["You're an ok person"]
+print(
+    "Welcome to the Daily Affirmation Generator! Please answer the following questions to get your affirmation: "
+)
+time.sleep(1)
+print("")
 
-affirmations = [positive, negative, neutral]
+name = input("What is your name? ")
+day_of_week = input("What is the current day of the week? ")
+favorite_things = input("What are a few of your favorite things? ")
+print("")
 
-print("Welcome to the Daily Affirmation Generator!")
-time.sleep(1)
-print("This program will generate a random affirmation for you!")
-time.sleep(1)
-print("Let's begin!")
-time.sleep(1)
-print("Your affirmation is...")
-time.sleep(1)
-print(random.choice(affirmations))
-time.sleep(1)
-print("Thank you for using the Daily Affirmation Generator!")
+if day_of_week.lower() == "monday":
+    affirmation = "Hey " + name.title(
+    ) + "! Start your week with a smile and conquer the day. Remember, " + favorite_things + " bring you joy!"
+elif day_of_week.lower() == "tuesday":
+    affirmation = "Hello " + name.title(
+    ) + "! Embrace the challenges of today with enthusiasm. Your passion for " + favorite_things + " will guide you!"
+elif day_of_week.lower() == "wednesday":
+    affirmation = "Good day, " + name.title(
+    ) + "! You're halfway through the week. Stay focused and let " + favorite_things + " inspire your success!"
+elif day_of_week.lower() == "thursday":
+    affirmation = "Greetings, " + name.title(
+    ) + "! Keep pushing forward. Your dedication to " + favorite_things + " will lead to great accomplishments!"
+elif day_of_week.lower() == "friday":
+    affirmation = "Happy Friday, " + name.title(
+    ) + "! Finish strong and celebrate your achievements. Thinking about " + favorite_things + " and your favorite beverage at the end of the day will make your day even better!"
+elif day_of_week.lower() == "saturday":
+    affirmation = "Hey there, " + name.title(
+    ) + "! Enjoy your weekend and indulge in your favorite things, like " + favorite_things + ". You deserve it!"
+elif day_of_week.lower() == "sunday":
+    affirmation = "Good morning, " + name.title(
+    ) + "! Take some time for yourself today. Relax and cherish your favorite things, like " + favorite_things + "."
+else:
+    affirmation = "I don't recognize that day. Please enter a valid day of the week."
+
+print(affirmation)
+
+#In the above code, we convert the input day_of_week to lowercase using .lower() to make the if statements case-insensitive. The .title() method is used for the name variable to capitalize the first letter.
