@@ -22,6 +22,12 @@ True
 >>> 'HELLO' in 'Hello World'
 False
 
+String interpolation
+>>> name = 'Al'
+>>> age = 4000
+>>> 'My name is %s. I am %s years old.' % (name, age)
+'My name is Al. I am 4000 years old.'
+
 F-strings
 You can use f-strings to make this print() call much cleaner:
 >>> name = 'Al'
@@ -30,4 +36,50 @@ You can use f-strings to make this print() call much cleaner:
 'My name is Al. Next year I will be 4001.'
 
 The f-string expression evaluates to a string, which is then passed to the print() function. Notice that the f-string expression is inside the quotes that begin and end the string. You can use single, double, or triple quotes for an f-string.
+
+The upper(), lower(), isupper(), and islower() Methods
+>>> spam = 'Hello, world!'
+>>> spam = spam.upper()
+>>> spam
+'HELLO, WORLD!'
+>>> spam = spam.lower()
+>>> spam
+'hello, world!'
+
+>>> spam = 'Hello World!'
+>>> spam.islower()
+False
+>>> spam.isupper()
+False
+>>> 'HELLO'.isupper()
+True
+>>> 'abc'.isupper()
+False
+>>> 'abc'.islower()
+True
+
+Since the upper() and lower() string methods themselves return strings, you can call string methods on those returned string values as well. Expressions that do this will look like a chain of method calls. Enter the following into the interactive shell:
+
+>>> 'Hello'.upper()
+'HELLO'
+>>> 'Hello'.upper().lower()
+'hello
+
+The isX() Methods
+Along with islower() and isupper(), there are several other string methods that have names beginning with the word is. These methods return a Boolean value that describes the nature of the string. Here are some common isX string methods:
+
+isalpha() Returns True if the string consists only of letters and isn’t blank
+
+isalnum() Returns True if the string consists only of letters and numbers and is not blank
+
+isdecimal() Returns True if the string consists only of numeric characters and is not blank
+
+isspace() Returns True if the string consists only of spaces, tabs, and newlines and is not blank
+
+istitle() Returns True if the string consists only of words that begin with an uppercase letter followed by only lowercase letters
+
+The isX() string methods are helpful when you need to validate user input. For example, the following program repeatedly asks users for their age and a password until they provide valid input. 
+Open a new file editor window and enter this program, saving it as validateInput.py:
+
+The startswith() and endswith() Methods
 
