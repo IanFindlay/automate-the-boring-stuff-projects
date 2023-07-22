@@ -82,4 +82,38 @@ The isX() string methods are helpful when you need to validate user input. For e
 Open a new file editor window and enter this program, saving it as validateInput.py:
 
 The startswith() and endswith() Methods
+The startswith() and endswith() methods return True if the string value they are called on begins or ends (respectively) with the string passed to the method; otherwise, they return False. Enter the following into the interactive shell:
 
+>>> 'Hello, world!'.startswith('Hello')
+True
+>>> 'Hello, world!'.endswith('world!')
+True
+
+The join() and split() Methods
+>>> ' '.join(['My', 'name', 'is', 'Simon'])
+'My name is Simon'
+
+>>> 'My name is Simon' .split()
+['My', 'name', 'is', 'Simon']
+
+Splitting Strings with the partition() Method
+The partition() string method can split a string into the text before and after a separator string. This method searches the string it is called on for the separator string it is passed, and returns a tuple of three substrings for the “before,” “separator,” and “after” substrings. Enter the following into the interactive shell:
+
+>>> 'Hello, world!'.partition('w')
+('Hello, ', 'w', 'orld!')
+
+Justifying Text with the rjust(), ljust(), and center() Methods
+
+Removing Whitespace with the strip(), rstrip(), and lstrip() Methods
+
+Numeric Values of Characters with the ord() and chr() Functions
+Computers store information as bytes—strings of binary numbers, which means we need to be able to convert text to numbers. Because of this, every text character has a corresponding numeric value called a Unicode code point. For example, the numeric code point is 65 for 'A', 52 for '4', and 33 for '!'. You can use the ord() function to get the code point of a one-character string, and the chr() function to get the one-character string of an integer code point. Enter the following into the interactive shell:
+
+>>> ord('A')
+65
+>>> ord('4')
+52
+>>> ord('!')
+33
+>>> chr(65)
+'A'
