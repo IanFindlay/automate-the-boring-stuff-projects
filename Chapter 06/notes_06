@@ -107,7 +107,7 @@ Justifying Text with the rjust(), ljust(), and center() Methods
 Removing Whitespace with the strip(), rstrip(), and lstrip() Methods
 
 Numeric Values of Characters with the ord() and chr() Functions
-Computers store information as bytes—strings of binary numbers, which means we need to be able to convert text to numbers. Because of this, every text character has a corresponding numeric value called a Unicode code point. For example, the numeric code point is 65 for 'A', 52 for '4', and 33 for '!'. You can use the ord() function to get the code point of a one-character string, and the chr() function to get the one-character string of an integer code point. Enter the following into the interactive shell:
+Computers store information as bytes—strings of binary numbers, which means we need to be able to convert text to numbers. Because of this, every text character has a corresponding numeric value called a unicode code point. For example, the numeric code point is 65 for 'A', 52 for '4', and 33 for '!'. You can use the ord() function to get the code point of a one-character string, and the chr() function to get the one-character string of an integer code point. Enter the following into the interactive shell:
 
 >>> ord('A')
 65
@@ -117,3 +117,28 @@ Computers store information as bytes—strings of binary numbers, which means we
 33
 >>> chr(65)
 'A'
+
+Pragmatic Unicode Pycon 
+https://www.youtube.com/watch?v=sgHbC6udIqc
+
+The biggest reason for slowness in Python2 to Python3 ports is difficulty with bytes and unicode
+https://pypi.org/project/unicode/
+
+Python3
+There are still 2 string types for bytes and unicode in Python3
+Python3 won't implicitly change bytes to unicode
+
+Mixing bytes and unicode is always a pain and you are forced to keep them straight
+Tip# 1
+Bytes on the outside and unicode on the inside - encode/decode at the edges
+Tip# 2
+It's either a byte or unicode string, you need to know what you have by using type
+Tip# 3
+Test unicode
+
+Facts of life with unicode
+2:20 FOL1 - I/O is always bytes
+3:25 FOL2 - The world needs more than 256 symbols
+17:08 FOL3 - Need both bytes and Unicode
+22:22 FOL4 - You cannot infer the encoding of bytes
+23:34 FOL5 - Declared encodings can be wrong
