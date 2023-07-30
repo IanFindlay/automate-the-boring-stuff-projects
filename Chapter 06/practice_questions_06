@@ -1,0 +1,70 @@
+1. What are escape characters?
+An escape character lets you use characters that are otherwise impossible to put into a string. 
+An escape character consists of a backslash (\) followed by the character you want to add to the string.
+
+2. What do the \n and \t escape characters represent?
+\t
+
+Tab
+
+\n
+
+Newline (line break)
+
+3. How can you put a \ backslash character in a string?
+With a raw string by putting an r in front of the string
+>>> print(r'That is Carol\'s cat.')
+That is Carol\'s cat.
+
+4. The string value "Howl's Moving Castle" is a valid string. Why isn’t it a problem that the single quote character in the word Howl's isn’t escaped?
+Because double quotes are used around the string
+
+5. If you don’t want to put \n in your string, how can you write a string with newlines in it?
+While you can use the \n escape character to put a newline into a string, it is often easier to use multiline strings. A multiline string in Python begins and ends with either three single quotes or three double quotes.
+
+This can be used for multiline commments too
+
+6. What do the following expressions evaluate to?
+'Hello, world!'[1]
+'Hello, world!'[0:5]
+'Hello, world!'[:5]
+'Hello, world!'[3:]
+
+>>> 'Hello, world!'[1]
+'e'
+>>> 'Hello, world!'[0:5]
+'Hello'
+>>> 'Hello, world!'[:5]
+'Hello'
+>>> 'Hello, world!'[3:]
+'lo, world!'
+
+If you specify an index, you’ll get the character at that position in the string. If you specify a range from one index to another, the starting index is included and the ending index is not. That’s why, if spam is 'Hello, world!', spam[0:5] is 'Hello'. The substring you get from spam[0:5] will include everything from spam[0] to spam[4], leaving out the comma at index 5 and the space at index 6. This is similar to how range(5) will cause a for loop to iterate up to, but not including, 5.
+
+7. What do the following expressions evaluate to?
+'Hello'.upper()
+'Hello'.upper().isupper()
+'Hello'.upper().lower()
+
+>>> 'Hello'.upper()
+'HELLO'
+>>> 'Hello'.upper().isupper()
+True
+>>> 'Hello'.upper().lower()
+hello
+
+8. What do the following expressions evaluate to?
+
+'Remember, remember, the fifth of November.'.split()
+'-'.join('There can be only one.'.split())
+>>> 'Remember, remember, the fifth of November.'.split()
+['Remember,', 'remember,', 'the', 'fifth', 'of', 'November.']
+
+>>> '-'.join('There can be only one.'.split())
+'There-can-be-only-one.'
+
+9. What string methods can you use to right-justify, left-justify, and center a string?
+rjust(), ljust(), and center()
+
+10. How can you trim whitespace characters from the beginning or end of a string?
+The strip() string method will return a new string without any whitespace characters at the beginning or end. The lstrip() and rstrip() methods will remove whitespace characters from the left and right ends, respectively.
