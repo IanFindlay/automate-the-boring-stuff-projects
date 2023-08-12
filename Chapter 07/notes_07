@@ -149,4 +149,81 @@ When called on a regex with no groups, such as \d\d\d-\d\d\d-\d\d\d\d, the metho
 When called on a regex that has groups, such as (\d\d\d)-(\d\d\d)-(\d\d\d\d), the method findall() returns a list of tuples of strings (one string for each group), such as [('415', '555', '9999'), ('212', '555', '0000')].
 
 Character Classes
-![Character Classes](https://github.com/CAG07/automate-the-boring-stuff-projects/blob/master/Chapter%2007/Screenshot%202023-08-12%20094319.png?raw=true "Character Classes")
+![Character Classes](automate-the-boring-stuff-projects/Chapter 07/character_classes.png "Character Classes")
+
+You can also make your own character classes
+
+The Caret and Dollar Sign Characters
+
+You can also use the caret symbol (^) at the start of a regex to indicate that a match must occur at the beginning of the searched text. Likewise, you can put a dollar sign ($) at the end of the regex to indicate the string must end with this regex pattern. 
+I always confuse the meanings of these two symbols, so I use the mnemonic “Carrots cost dollars” to remind myself that the caret comes first and the dollar sign comes last.
+
+The Wildcard Character
+
+The . (or dot) character in a regular expression is called a wildcard and will match any character except for a newline. For example, enter the following into the interactive shell:
+
+>>> atRegex = re.compile(r'.at')
+>>> atRegex.findall('The cat in the hat sat on the flat mat.')
+['cat', 'hat', 'sat', 'lat', 'mat']
+
+Match Everything with Dot-Star
+
+>>> nameRegex = re.compile(r'First Name: (.*) Last Name: (.*)')
+>>> mo = nameRegex.search('First Name: Al Last Name: Sweigart')
+>>> mo.group(1)
+'Al'
+>>> mo.group(2)
+'Sweigart'
+
+The dot-star uses greedy mode: It will always try to match as much text as possible.
+
+>>> nongreedyRegex = re.compile(r'<.*?>')
+>>> mo = nongreedyRegex.search('<To serve man> for dinner.>')
+>>> mo.group()
+'<To serve man>'
+>>>
+>>> greedyRegex = re.compile(r'<.*>')
+>>> mo = greedyRegex.search('<To serve man> for dinner.>')
+>>> mo.group()
+'<To serve man> for dinner.>'
+
+Review of Regex Symbols
+This chapter covered a lot of notation, so here’s a quick review of what you learned about basic regular expression syntax:
+
+The ? matches zero or one of the preceding group.
+The * matches zero or more of the preceding group.
+The + matches one or more of the preceding group.
+The {n} matches exactly n of the preceding group.
+The {n,} matches n or more of the preceding group.
+The {,m} matches 0 to m of the preceding group.
+The {n,m} matches at least n and at most m of the preceding group.
+{n,m}? or *? or +? performs a non-greedy match of the preceding group.
+^spam means the string must begin with spam.
+spam$ means the string must end with spam.
+The . matches any character, except newline characters.
+\d, \w, and \s match a digit, word, or space character, respectively.
+\D, \W, and \S match anything except a digit, word, or space character, respectively.
+[abc] matches any character between the brackets (such as a, b, or c).
+[^abc] matches any character that isn’t between the brackets.
+
+Managing Complex Regexes
+This “verbose mode” can be enabled by passing the variable re.VERBOSE as the second argument to re.compile().
+
+Now instead of a hard-to-read regular expression like this:
+
+phoneRegex = re.compile(r'((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}
+(\s*(ext|x|ext.)\s*\d{2,5})?)')
+
+you can spread the regular expression over multiple lines with comments like this:
+
+phoneRegex = re.compile(r'''(
+    (\d{3}|\(\d{3}\))?            # area code
+    (\s|-|\.)?                    # separator
+    \d{3}                         # first 3 digits
+    (\s|-|\.)                     # separator
+    \d{4}                         # last 4 digits
+    (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
+    )''', re.VERBOSE)
+
+A | can be used to combine arguments with re.compile
+someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
