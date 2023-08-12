@@ -122,3 +122,29 @@ Since (Ha){3,5} can match three, four, or five instances of Ha in the string 'Ha
 
 Python’s regular expressions are greedy by default, which means that in ambiguous situations they will match the longest string possible. The non-greedy (also called lazy) version of the braces, which matches the shortest string possible, has the closing brace followed by a question mark.
 
+The findall() Method
+
+In addition to the search() method, Regex objects also have a findall() method. While search() will return a Match object of the first matched text in the searched string, the findall() method will return the strings of every match in the searched string.
+
+>>> phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+>>> mo = phoneNumRegex.search('Cell: 415-555-9999 Work: 212-555-0000')
+>>> mo.group()
+'415-555-9999'
+>>> mo = phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000')
+>>> mo.group()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'group'
+>>> mo
+['415-555-9999', '212-555-0000']
+
+>>> phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d)-(\d\d\d\d)') # has groups
+>>> phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000')
+[('415', '555', '9999'), ('212', '555', '0000')]
+
+
+To summarize what the findall() method returns, remember the following:
+
+When called on a regex with no groups, such as \d\d\d-\d\d\d-\d\d\d\d, the method findall() returns a list of string matches, such as ['415-555-9999', '212-555-0000'].
+When called on a regex that has groups, such as (\d\d\d)-(\d\d\d)-(\d\d\d\d), the method findall() returns a list of tuples of strings (one string for each group), such as [('415', '555', '9999'), ('212', '555', '0000')].
+
