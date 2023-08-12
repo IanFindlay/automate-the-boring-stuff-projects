@@ -1,0 +1,124 @@
+You pass chunk to isPhoneNumber() to see whether it matches the phone number pattern ➋, and if so, you print the chunk.
+
+Continue to loop through message, and eventually the 12 characters in chunk will be a phone number. 
+The loop goes through the entire string, testing each 12-character piece and printing any chunk it finds that satisfies isPhoneNumber(). 
+Once we’re done going through message, we print Done.
+
+While the string in message is short in this example, it could be millions of characters long and the program would still run in less than a second. A similar program that finds phone numbers using regular expressions would also run in less than a second, but regular expressions make it quicker to write these programs.
+
+is_phone_number.py
+
+Finding Patterns of Text with Regular Expressions
+
+The previous phone number–finding program works, but it uses a lot of code to do something limited: the isPhoneNumber() function is 17 lines but can find only one pattern of phone numbers. What about a phone number formatted like 415.555.4242 or (415) 555-4242? What if the phone number had an extension, like 415-555-4242 x99? The isPhoneNumber() function would fail to validate them. You could add yet more code for these additional patterns, but there is an easier way.
+
+Regular expressions, called regexes for short, are descriptions for a pattern of text. For example, a \d in a regex stands for a digit character—that is, any single numeral from 0 to 9. The regex \d\d\d-\d\d\d-\d\d\d\d is used by Python to match the same text pattern the previous isPhoneNumber() function did: a string of three numbers, a hyphen, three more numbers, another hyphen, and four numbers. Any other string would not match the \d\d\d-\d\d\d-\d\d\d\d regex.
+
+But regular expressions can be much more sophisticated. For example, adding a 3 in braces ({3}) after a pattern is like saying, “Match this pattern three times.” So the slightly shorter regex \d{3}-\d{3}-\d{4} also matches the correct phone number format.
+
+The mo variable name is just a generic name to use for match objects. These lines using regex does the exact same thing as the is_phone_number.py program
+>>> import re
+>>> phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+>>> mo = phoneNumRegex.search('My number is 415-555-4242.')
+>>> print('Phone number found: ' + mo.group())
+Phone number found: 415-555-4242
+
+You will usually pass raw strings to re.compile()
+Use the following to find all phone numbers:
+
+mo = phoneNumRegex.findall('My number is 415-555-4242.')
+
+Grouping with Parentheses
+Say you want to separate the area code from the rest of the phone number. Adding parentheses will create groups in the regex: (\d\d\d)-(\d\d\d-\d\d\d\d). Then you can use the group() match object method to grab the matching text from just one group.
+
+>>> phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
+>>> mo = phoneNumRegex.search('My number is 415-555-4242.')
+>>> mo.group(1)
+'415'
+>>> mo.group(2)
+'555-4242'
+>>> mo.group(0)
+'415-555-4242'
+>>> mo.group()
+'415-555-4242'
+
+The \( and \) escape characters in the raw string passed to re.compile() will match actual parenthesis characters. In regular expressions, the following characters have special meanings:
+
+.  ^  $  *  +  ?  {  }  [  ]  \  |  (  )
+
+If you want to detect these characters as part of your text pattern, you need to escape them with a backslash:
+
+\.  \^  \$  \*  \+  \?  \{  \}  \[  \]  \\  \|  \(  \)
+
+
+>>> batRegex = re.compile(r'Bat(man|mobile|copter|bat)')
+>>> mo = batRegex.search('Batmobile lost a wheel')
+>>> mo.group()
+'Batmobile'
+>>> mo.group(1)
+'mobile'
+
+Optional Matching with the Question Mark
+
+Sometimes there is a pattern that you want to match only optionally. That is, the regex should find a match regardless of whether that bit of text is there. The ? character flags the group that precedes it as an optional part of the pattern. For example, enter the following into the interactive shell:
+
+>>> batRegex = re.compile(r'Bat(wo)?man')
+>>> mo1 = batRegex.search('The Adventures of Batman')
+>>> mo1.group()
+'Batman'
+
+>>> mo2 = batRegex.search('The Adventures of Batwoman')
+>>> mo2.group()
+'Batwoman'
+
+The (wo)? part of the regular expression means that the pattern wo is an optional group. The regex will match text that has zero instances or one instance of wo in it. This is why the regex matches both 'Batwoman' and 'Batman'.
+
+Matching Zero or More with the Star
+
+The * (called the star or asterisk) means “match zero or more”—the group that precedes the star can occur any number of times in the text. It can be completely absent or repeated over and over again. Let’s look at the Batman example again.
+
+>>> batRegex = re.compile(r'Bat(wo)*man')
+>>> mo1 = batRegex.search('The Adventures of Batman')
+>>> mo1.group()
+'Batman'
+
+>>> mo2 = batRegex.search('The Adventures of Batwoman')
+>>> mo2.group()
+'Batwoman'
+
+>>> mo3 = batRegex.search('The Adventures of Batwowowowoman')
+>>> mo3.group()
+'Batwowowowoman'
+
+For 'Batman', the (wo)* part of the regex matches zero instances of wo in the string; for 'Batwoman', the (wo)* matches one instance of wo; and for 'Batwowowowoman', (wo)* matches four instances of wo.
+
+Matching One or More with the Plus
+
+While * means “match zero or more,” the + (or plus) means “match one or more.” Unlike the star, which does not require its group to appear in the matched string, the group preceding a plus must appear at least once.
+>>> batRegex = re.compile(r'Bat(wo)+man')
+>>> mo1 = batRegex.search('The Adventures of Batwoman')
+>>> mo1.group()
+'Batwoman'
+>>>
+>>> mo2 = batRegex.search('The Adventures of Batwowowowoman')
+>>> mo2.group()
+'Batwowowowoman'
+>>>
+>>> mo3 = batRegex.search('The Adventures of Batman')
+>>> mo3 == None
+True
+>>> mo3.group()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'group'
+
+Matching Specific Repetitions with Braces
+
+If you have a group that you want to repeat a specific number of times, follow the group in your regex with a number in braces. For example, the regex (Ha){3} will match the string 'HaHaHa', but it will not match 'HaHa', since the latter has only two repeats of the (Ha) group.
+
+Greedy and Non-greedy Matching
+
+Since (Ha){3,5} can match three, four, or five instances of Ha in the string 'HaHaHaHaHa', you may wonder why the Match object’s call to group() in the previous brace example returns 'HaHaHaHaHa' instead of the shorter possibilities. After all, 'HaHaHa' and 'HaHaHaHa' are also valid matches of the regular expression (Ha){3,5}.
+
+Python’s regular expressions are greedy by default, which means that in ambiguous situations they will match the longest string possible. The non-greedy (also called lazy) version of the braces, which matches the shortest string possible, has the closing brace followed by a question mark.
+
