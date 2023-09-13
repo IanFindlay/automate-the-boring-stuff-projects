@@ -1,0 +1,61 @@
+The PyInputPlus Module
+PyInputPlus contains functions similar to input() for several kinds of data: numbers, dates, email addresses, and more. If the user ever enters invalid input, such as a badly formatted date or a number that is outside of an intended range, PyInputPlus will reprompt them for input just like our code in the previous section did. PyInputPlus also has other useful features like a limit for the number of times it reprompts users and a timeout if users are required to respond within a time limit.
+
+Just as you can pass a string to input() to provide a prompt, you can pass a string to a PyInputPlus function’s prompt keyword argument to display a prompt:
+>>> response = input('Enter a number: ')
+Enter a number: 42
+>>> response
+'42'
+>>> import pyinputplus as pyip
+>>> response = pyip.inputInt(prompt='Enter a number: ')
+Enter a number: cat
+'cat' is not an integer.
+Enter a number: 42
+>>> response
+42
+
+>>> response = pyip.inputNum('>', min=4, lessThan=6)
+Enter num: 6
+Input must be less than 6.
+Enter num: 3
+Input must be at minimum 4.
+Enter num: 4
+>>> response
+4
+
+These keyword arguments are optional, but if supplied, the input cannot be less than the min argument or greater than the max argument (though the input can be equal to them). Also, the input must be greater than the greaterThan and less than the lessThan arguments (that is, the input cannot be equal to them).
+
+Use blank=True if you’d like to make input optional so that the user doesn’t need to enter anything.
+
+If you’d like a function to stop asking the user for input after a certain number of tries or a certain amount of time, you can use the limit and timeout keyword arguments.
+
+The allowRegexes and blockRegexes Keyword Arguments
+You can also use regular expressions to specify whether an input is allowed or not. The allowRegexes and blockRegexes keyword arguments take a list of regular expression strings to determine what the PyInputPlus function will accept or reject as valid input. For example, enter the following code into the interactive shell so that inputNum() will accept Roman numerals in addition to the usual numbers:
+
+>>> import pyinputplus as pyip
+>>> response = pyip.inputNum(allowRegexes=[r'(I|V|X|L|C|D|M)+', r'zero'])
+XLII
+
+https://pyinputplus.readthedocs.io/.
+
+If you specify both an allowRegexes and blockRegexes argument, the allow list overrides the block list. For example, enter the following into the interactive shell, which allows 'caterpillar' and 'category' but blocks anything else that has the word 'cat' in it:
+
+>>> import pyinputplus as pyip
+>>> response = pyip.inputStr(allowRegexes=[r'caterpillar', 'category'],
+blockRegexes=[r'cat'])
+cat
+This response is invalid.
+catastrophe
+This response is invalid.
+category
+>>> response
+'category'
+
+Passing a Custom Validation Function to inputCustom()
+You can write a function to perform your own custom validation logic by passing the function to inputCustom(). For example, say you want the user to enter a series of digits that adds up to 10. There is no pyinputplus.inputAddsUpToTen() function, but you can create your own function that:
+
+Accepts a single string argument of what the user entered
+Raises an exception if the string fails validation
+Returns None (or has no return statement) if inputCustom() should return the string unchanged
+Returns a non-None value if inputCustom() should return a different string from the one the user entered
+Is passed as the first argument to inputCustom()
