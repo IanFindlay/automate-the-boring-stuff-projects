@@ -28,3 +28,44 @@ WindowsPath('C:/Users/Al/AppData/Local/Programs/Python/Python37/my/relative/
 path')
 
 ## Getting the Parts of a File Path
+Reference Table 9-1: Parts of a File Path
+
+>>> Path.cwd()
+WindowsPath('C:/Users/Al/AppData/Local/Programs/Python/Python37')
+>>> Path.cwd().parents[0]
+WindowsPath('C:/Users/Al/AppData/Local/Programs/Python')
+>>> Path.cwd().parents[1]
+WindowsPath('C:/Users/Al/AppData/Local/Programs')
+>>> Path.cwd().parents[2]
+WindowsPath('C:/Users/Al/AppData/Local')
+>>> Path.cwd().parents[3]
+WindowsPath('C:/Users/Al/AppData')
+>>> Path.cwd().parents[4]
+WindowsPath('C:/Users/Al')
+>>> Path.cwd().parents[5]
+WindowsPath('C:/Users')
+>>> Path.cwd().parents[6]
+WindowsPath('C:/')
+
+## Finding File Sizes and Folder Contents
+>>> os.path.getsize('C:\\Windows\\System32\\calc.exe')
+27648
+>>> os.listdir('C:\\Windows\\System32')
+['0409', '12520437.cpx', '12520850.cpx', '5U877.ax', 'aaclient.dll',]
+
+## Modifying a List of Files Using Glob Patterns
+If you want to work on specific files, the glob() method is simpler to use than listdir(). Path objects have a glob() method for listing the contents of a folder according to a glob pattern. Glob patterns are like a simplified form of regular expressions often used in command line commands.
+
+>>> list(p.glob('*.txt') # Lists all text files.
+[WindowsPath('C:/Users/Al/Desktop/foo.txt')]
+
+## Checking Path Validity
+You can determine whether there is a DVD or flash drive currently attached to the computer by checking for it with the exists() method. For instance, if I wanted to check for a flash drive with the volume named D:\ on my Windows computer, I could do that with the following:
+
+>>> dDrive = Path('D:/')
+>>> dDrive.exists()
+False
+
+## The File Reading/Writing Process
+### Opening Files with the open() Function
+
