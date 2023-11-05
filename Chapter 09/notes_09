@@ -1,0 +1,30 @@
+Backslash on Windows and Forward Slash on macOS and Linux
+On Windows, paths are written using backslashes (\) as the separator between folder names. The macOS and Linux operating systems, however, use the forward slash (/) as their path separator. If you want your programs to work on all operating systems, you will have to write your Python scripts to handle both cases.
+
+>>> from pathlib import Path
+>>> Path('spam', 'bacon', 'eggs')
+
+WindowsPath('spam/bacon/eggs')
+>>> str(Path('spam', 'bacon', 'eggs'))
+'spam\\bacon\\eggs'
+
+Note that pathlib was introduced in Python 3.4 to replace older os.path functions.
+
+The only thing you need to keep in mind when using the / operator for joining paths is that one of the first two values must be a Path object
+
+## Absolute vs. Relative Paths
+There are two ways to specify a file path:
+
+An absolute path, which always begins with the root folder
+A relative path, which is relative to the program’s current working directory
+
+Creating New Folders Using the os.makedirs() Function
+
+## Handling Absolute and Relative Paths
+>>> Path('my/relative/path')
+WindowsPath('my/relative/path')
+>>> Path.cwd() / Path('my/relative/path')
+WindowsPath('C:/Users/Al/AppData/Local/Programs/Python/Python37/my/relative/
+path')
+
+## Getting the Parts of a File Path
