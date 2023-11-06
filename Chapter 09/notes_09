@@ -68,4 +68,52 @@ False
 
 ## The File Reading/Writing Process
 ### Opening Files with the open() Function
+>>> helloFile = open('C:\\Users\\your_home_folder\\hello.txt')
 
+### Reading the Contents of Files
+>>> helloContent = helloFile.read()
+>>> helloContent
+'Hello world!'
+
+### Writing to Files
+Python allows you to write content to a file in a way similar to how the print() function “writes” strings to the screen. You can’t write to a file you’ve opened in read mode, though. Instead, you need to open it in “write plaintext” mode or “append plaintext” mode, or write mode and append mode for short.
+
+Write mode will overwrite the existing file and start from scratch, just like when you overwrite a variable’s value with a new value. Pass 'w' as the second argument to open() to open the file in write mode. Append mode, on the other hand, will append text to the end of the existing file. You can think of this as appending to a list in a variable, rather than overwriting the variable altogether. Pass 'a' as the second argument to open() to open the file in append mode.
+
+>>> baconFile = open('bacon.txt', 'w')   
+>>> baconFile.write('Hello, world!\n')
+13
+>>> baconFile.close()
+>>> baconFile = open('bacon.txt', 'a')
+>>> baconFile.write('Bacon is not a vegetable.')
+25
+>>> baconFile.close()
+>>> baconFile = open('bacon.txt')
+>>> content = baconFile.read()
+>>> baconFile.close()
+>>> print(content)
+Hello, world!
+Bacon is not a vegetable.
+
+As of Python 3.6, you can also pass a Path object to the open() function instead of a string for the filename.
+
+### Saving Variables with the shelve Module
+You can save variables in your Python programs to binary shelf files using the shelve module. This way, your program can restore data to variables from the hard drive. The shelve module will let you add Save and Open features to your program.
+
+>>> import shelve
+>>> shelfFile = shelve.open('mydata')
+>>> cats = ['Zophie', 'Pooka', 'Simon']
+>>> shelfFile['cats'] = cats
+>>> shelfFile.close()
+>>> shelfFile = shelve.open('mydata')
+>>> type(shelfFile)
+<class 'shelve.DbfilenameShelf'>
+>>> shelfFile['cats']
+['Zophie', 'Pooka', 'Simon']
+
+Plaintext is useful for creating files that you’ll read in a text editor such as Notepad or TextEdit, but if you want to save data from your Python programs, use the shelve module.
+
+### Saving Variables with the pprint.pformat() Function
+The pprint.pformat() function will “pretty print” the contents of a list or dictionary to a string in a format that you can copy and paste into your program.
+
+The benefit of creating a .py file (as opposed to saving variables with the shelve module) is that because it is a text file, the contents of the file can be read and modified by anyone with a simple text editor. For most applications, however, saving data using the shelve module is the preferred way to save variables to a file. Only basic data types such as integers, floats, strings, lists, and dictionaries can be written to a file as simple text. File objects, for example, cannot be encoded as text.
