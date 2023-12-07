@@ -1,7 +1,25 @@
-## Copying Files and Folders
+Copying Files and Folders
 The shutil module provides functions for copying files, as well as entire folders.
 
 Calling shutil.copy(source, destination) will copy the file at the path source to the folder at the path destination. 
-
 While shutil.copy() will copy a single file, shutil.copytree() will copy an entire folder and every folder and file contained in it.
+
+Moving and Renaming Files and Folders
+>>> import shutil
+>>> shutil.move('C:\\bacon.txt', 'C:\\eggs')
+'C:\\eggs\\bacon.txt'
+
+Assuming a folder named eggs already exists in the C:\ directory, this shutil.move() call says, “Move C:\bacon.txt into the folder C:\eggs.”
+
+If there had been a bacon.txt file already in C:\eggs, it would have been overwritten. Since it’s easy to accidentally overwrite files in this way, you should take some care when using move().
+
+>>> shutil.move('C:\\bacon.txt', 'C:\\eggs')
+'C:\\eggs'
+
+Here, move() can’t find a folder named eggs in the C:\ directory and so assumes that destination must be specifying a filename, not a folder. 
+So the bacon.txt text file is renamed to eggs (a text file without the .txt file extension)—probably not what you wanted! 
+This can be a tough-to-spot bug in your programs since the move() call can happily do something that might be quite different from what you were expecting. 
+This is yet another reason to be careful when using move().
+
+Destination folders must exist or Python will thrown an error
 
