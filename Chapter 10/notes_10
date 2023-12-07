@@ -1,0 +1,7 @@
+## Copying Files and Folders
+The shutil module provides functions for copying files, as well as entire folders.
+
+Calling shutil.copy(source, destination) will copy the file at the path source to the folder at the path destination. 
+
+While shutil.copy() will copy a single file, shutil.copytree() will copy an entire folder and every folder and file contained in it.
+
