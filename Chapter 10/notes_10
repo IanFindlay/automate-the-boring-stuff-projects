@@ -21,5 +21,54 @@ So the bacon.txt text file is renamed to eggs (a text file without the .txt file
 This can be a tough-to-spot bug in your programs since the move() call can happily do something that might be quite different from what you were expecting. 
 This is yet another reason to be careful when using move().
 
-Destination folders must exist or Python will thrown an error
+Destination folders must exist or Python will throw an exception
 
+Permanently Deleting Files and Folders
+Use the shutil module to delete directories
+
+Calling os.unlink(path) will delete the file at path.
+Calling os.rmdir(path) will delete the folder at path. This folder must be empty of any files or folders.
+Calling shutil.rmtree(path) will remove the folder at path, and all files and folders it contains will also be deleted.
+
+Use the print command to check deletions and prevent accidental deletions:
+import os
+from pathlib import Path
+for filename in Path.home().glob('*.rxt'):
+    #os.unlink(filename)
+    print(filename)
+
+Once you are certain the program works as intended, delete the print(filename) line and uncomment the os.unlink(filename) line. Then run the program again to actually delete the files.
+
+Safe Deletes with the send2trash Module
+pip install --user send2trash
+
+>>> import send2trash
+>>> baconFile = open('bacon.txt', 'a')   # creates the file
+>>> baconFile.write('Bacon is not a vegetable.')
+25
+>>> baconFile.close()
+>>> send2trash.send2trash('bacon.txt')
+
+In general, you should always use the send2trash.send2trash() function to delete files and folders.
+
+The os.walk() function is passed a single string value: the path of a folder. You can use os.walk() in a for loop statement to walk a directory tree, much like how you can use the range() function to walk over a range of numbers. Unlike range(), the os.walk() function will return three values on each iteration through the loop:
+
+A string of the current folder’s name
+A list of strings of the folders in the current folder
+A list of strings of the files in the current folder
+
+Example os.walk() program:
+import os
+
+for folderName, subfolders, filenames in os.walk('C:\\delicious'):
+    print('The current folder is ' + folderName)
+
+    for subfolder in subfolders:
+        print('SUBFOLDER OF ' + folderName + ': ' + subfolder)
+
+    for filename in filenames:
+        print('FILE INSIDE ' + folderName + ': '+ filename)
+
+    print('')
+
+Reading ZIP Files
