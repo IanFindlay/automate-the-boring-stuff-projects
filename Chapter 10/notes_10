@@ -72,3 +72,16 @@ for folderName, subfolders, filenames in os.walk('C:\\delicious'):
     print('')
 
 Reading ZIP Files
+To read the contents of a ZIP file, first you must create a ZipFile object (note the capital letters Z and F). 
+ZipFile objects are conceptually similar to the File objects you saw returned by the open() function in the previous chapter: they are values through which the program interacts with the file.
+
+Extracting from ZIP Files
+The extractall() method for ZipFile objects extracts all the files and folders from a ZIP file into the current working directory.
+
+The extract() method for ZipFile objects will extract a single file from the ZIP file. The string you pass to extract() must match one of the strings in the list returned by namelist(). Optionally, you can pass a second argument to extract() to extract the file into a folder other than the current working directory. 
+If this second argument is a folder that doesn’t yet exist, Python will create the folder. The value that extract() returns is the absolute path to which the file was extracted.
+
+Creating and Adding to ZIP Files
+To create your own compressed ZIP files, you must open the ZipFile object in write mode by passing 'w' as the second argument. 
+(This is similar to opening a text file in write mode by passing 'w' to the open() function.)
+
