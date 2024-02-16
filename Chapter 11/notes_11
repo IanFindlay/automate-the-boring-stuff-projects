@@ -1,0 +1,56 @@
+Raising Exceptions
+Using the try and except statements, you can handle errors more gracefully instead of letting the entire program crash.
+
+Getting the Traceback as a String
+When Python encounters an error, it produces a treasure trove of error information called the traceback. 
+The traceback includes the error message, the line number of the line that caused the error, and the sequence of the function calls that led to the error. 
+This sequence of calls is called the call stack.
+
+When you run errorExample.py, the output will look like this:
+
+Traceback (most recent call last):
+  File "errorExample.py", line 7, in <module>
+    spam()
+  File "errorExample.py", line 2, in spam
+    bacon()
+  File "errorExample.py", line 5, in bacon
+    raise Exception('This is the error message.')
+Exception: This is the error message.
+
+From the traceback, you can see that the error happened on line 5, in the bacon() function. 
+This particular call to bacon() came from line 2, in the spam() function, which in turn was called on line 7. 
+In programs where functions can be called from multiple places, the call stack can help you determine which call led to the error.
+
+Python displays the traceback whenever a raised exception goes unhandled. But you can also obtain it as a string by calling traceback.format_exc(). 
+This function is useful if you want the information from an exception’s traceback but also want an except statement to gracefully handle the exception. 
+You will need to import Python’s traceback module before calling this function.
+
+In plain English, an assert statement says, “I assert that the condition holds true, and if not, there is a bug somewhere, so immediately stop the program.” For example, enter the following into the interactive shell:
+
+>>> ages = [26, 57, 92, 54, 22, 15, 17, 80, 47, 73]
+>>> ages.sort()
+>>> ages
+[15, 17, 22, 26, 47, 54, 57, 73, 80, 92]
+>>> assert
+ages[0] <= ages[-1] # Assert that the first age is <= the last age.
+
+Unlike exceptions, your code should not handle assert statements with try and except; if an assert fails, your program should crash. 
+Assertions are for programmer errors, not user errors. 
+Assertions should only fail while the program is under development; a user should never see an assertion error in a finished program.
+
+Using the logging Module
+To enable the logging module to display log messages on your screen as your program runs, copy the following to the top of your program (but under the #! python shebang line):
+
+import logging
+logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s -  %(levelname)
+s -  %(message)s')
+
+Logging to a File
+Instead of displaying the log messages to the screen, you can write them to a text file. The logging.basicConfig() function takes a filename keyword argument, like so:
+
+import logging
+logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='
+%(asctime)s -  %(levelname)s -  %(message)s')
+
+Breakpoints
+A breakpoint can be set on a specific line of code and forces the debugger to pause whenever the program execution reaches that line.
